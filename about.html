@@ -1,95 +1,749 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    	<link rel="icon" type="image/png" href="images/logo_transparent_0.25x.png">
-    	<title>Kellie Hucker: About Me</title>
-        <meta charset = "UTF-8">
-        <meta name = "description" content = "Kellie Hucker - Tech Art portfolio.">
-    </head>
+<html lang="en">
 
-    <body style="background-color:black; color:white; font-family:Arial, sans-serif; text-shadow:2px 2px 4px black;">
+<head>
+    <meta charset="UTF-8">
 
-        <!-- Fancy Pants Header Section -->
-        <div style="background-image:url('images/banner.png'); background-size:cover; background-position:center; text-align:center; padding:40px 10px;">
-            <!-- My Name Section & BG Color & Font Styling -->
-            <h1 style="color:white; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black;">
-                Kellie Hucker
-            </h1>
-            <!-- My Titles Section & BG Color & Font Styling -->
-            <h2 style="color:white; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black;">
-                Senior Technical Artist &amp; Game Development Leader
+    <!-- Browser Tab Icon -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="images/logos/kh_logos/logo_transparent_0.5x.png"
+    >
+
+    <title>Kellie Hucker: About Me</title>
+
+    <meta
+        name="description"
+        content="About Kellie Hucker - Senior Technical Artist and Game Development Leader."
+    >
+
+    <style>
+
+        /* =========================================================
+           GLOBAL
+           ========================================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+
+            background-color: black;
+            color: white;
+
+            font-family: Arial, sans-serif;
+
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            color: cyan;
+        }
+
+        a:hover {
+            color: white;
+        }
+
+
+        /* =========================================================
+           HERO / BANNER
+           ========================================================= */
+
+        .hero {
+            background-image:
+                url('images/logos/kh_logos/banner.png');
+
+            background-size: cover;
+            background-position: center;
+
+            text-align: center;
+
+            padding:
+                clamp(40px, 8vw, 100px)
+                20px;
+        }
+
+        .hero h1 {
+            margin: 0;
+
+            font-size:
+                clamp(2.5rem, 7vw, 5rem);
+
+            color: white;
+
+            text-shadow:
+                -2px -2px 0 black,
+                 2px -2px 0 black,
+                -2px  2px 0 black,
+                 2px  2px 0 black,
+                 0 0 8px black;
+        }
+
+        .hero h2 {
+            margin: 15px 0 0;
+
+            font-size:
+                clamp(1.1rem, 3vw, 2rem);
+
+            color: white;
+
+            text-shadow:
+                -2px -2px 0 black,
+                 2px -2px 0 black,
+                -2px  2px 0 black,
+                 2px  2px 0 black,
+                 0 0 8px black;
+        }
+
+        .hero-tagline {
+            margin-top: 18px;
+
+            font-size:
+                clamp(0.9rem, 2vw, 1.2rem);
+
+            color: #d8ffff;
+
+            text-shadow:
+                0 0 6px black,
+                0 0 10px black;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+           ========================================================= */
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 15px 20px;
+
+            background-color: #050505;
+
+            border-bottom:
+                1px solid #1c4444;
+        }
+
+        nav a,
+        nav span {
+            padding: 6px 8px;
+        }
+
+        nav a {
+            text-decoration: none;
+
+            transition:
+                color 0.2s ease,
+                text-shadow 0.2s ease;
+        }
+
+        nav a:hover {
+            color: white;
+
+            text-shadow:
+                0 0 8px cyan;
+        }
+
+
+        /* =========================================================
+           MAIN PAGE
+           ========================================================= */
+
+        main {
+            width: min(1100px, 100%);
+
+            margin: 0 auto;
+
+            padding:
+                40px 20px
+                60px;
+        }
+
+
+        /* =========================================================
+           ABOUT SECTION
+           ========================================================= */
+
+        .about-section {
+            max-width: 900px;
+
+            margin: 0 auto 50px;
+
+            padding: 30px;
+
+            background-color: #0a0a0a;
+
+            border:
+                1px solid #164f4f;
+
+            border-radius: 12px;
+        }
+
+        .about-section h2 {
+            margin-top: 0;
+
+            color: cyan;
+
+            font-size:
+                clamp(1.7rem, 4vw, 2.4rem);
+        }
+
+        .about-section p {
+            color: #f0f0f0;
+
+            font-size: 1.05rem;
+
+            line-height: 1.7;
+
+            text-shadow: none;
+        }
+
+        .signature {
+            margin-top: 30px;
+        }
+
+
+        /* =========================================================
+           SECTION HEADINGS
+           ========================================================= */
+
+        .section-title {
+            text-align: center;
+
+            font-size:
+                clamp(1.6rem, 4vw, 2.2rem);
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================================================
+           SKILLS
+           ========================================================= */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(200px, 1fr)
+                );
+
+            gap: 18px;
+
+            margin-bottom: 55px;
+        }
+
+        .skill-card {
+            padding: 22px;
+
+            background-color: #0a0a0a;
+
+            border:
+                1px solid #164f4f;
+
+            border-radius: 10px;
+
+            text-align: center;
+
+            color: #f0f0f0;
+
+            font-size: 1.05rem;
+
+            text-shadow: none;
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease,
+                background-color 0.2s ease;
+        }
+
+        .skill-card:hover {
+            transform:
+                translateY(-4px);
+
+            border-color: cyan;
+
+            background-color: #0d1111;
+
+            box-shadow:
+                0 0 12px
+                rgba(0, 255, 255, 0.25);
+        }
+
+
+        /* =========================================================
+           WORK HISTORY
+           ========================================================= */
+
+        .work-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(220px, 1fr)
+                );
+
+            gap: 18px;
+
+            margin-bottom: 50px;
+        }
+
+        .work-card {
+            padding: 24px;
+
+            background-color: #0a0a0a;
+
+            border:
+                1px solid #222;
+
+            border-radius: 10px;
+
+            text-shadow: none;
+        }
+
+        .work-card h3 {
+            margin:
+                0 0 8px;
+
+            color: cyan;
+        }
+
+        .work-card p {
+            margin: 0;
+
+            color: #cccccc;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================================================
+           RESUME / CONTACT CTA
+           ========================================================= */
+
+        .resume-section {
+            text-align: center;
+
+            margin-bottom: 30px;
+        }
+
+        .resume-button {
+            display: inline-block;
+
+            padding:
+                14px 24px;
+
+            background-color: #0a0a0a;
+
+            color: cyan;
+
+            border:
+                1px solid cyan;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease,
+                box-shadow 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .resume-button:hover {
+            background-color: cyan;
+
+            color: black;
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 0 15px
+                rgba(0, 255, 255, 0.35);
+        }
+
+
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+
+        footer {
+            margin-top: auto;
+
+            margin-bottom: 30px;
+
+            padding:
+                10px 20px;
+
+            text-align: center;
+        }
+
+        footer img {
+            width: 50px;
+            height: 50px;
+
+            position: relative;
+
+            top: 15px;
+            left: -10px;
+        }
+
+
+        /* =========================================================
+           SMALL SCREENS
+           ========================================================= */
+
+        @media (max-width: 600px) {
+
+            nav {
+                gap: 5px;
+            }
+
+            .hero {
+                padding:
+                    clamp(30px, 12vw, 60px)
+                    15px;
+            }
+
+            main {
+                padding:
+                    30px 15px
+                    50px;
+            }
+
+            .about-section {
+                padding: 22px;
+            }
+
+            .skills-grid,
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         HERO
+         ========================================================= -->
+
+    <header class="hero">
+
+        <h1>
+            Kellie Hucker
+        </h1>
+
+        <h2>
+            Senior Technical Artist
+            &amp;
+            Game Development Leader
+        </h2>
+
+        <p class="hero-tagline">
+            Real-Time VFX • Shaders • Tools • Animation • Pipelines
+        </p>
+
+    </header>
+
+
+    <!-- =========================================================
+         NAVIGATION
+         ========================================================= -->
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <span>
+            About
+        </span>
+
+        <a href="unity.html">
+            Unity
+        </a>
+
+        <a href="unreal.html">
+            Unreal
+        </a>
+
+        <a href="cocos.html">
+            Cocos Creator
+        </a>
+
+        <a href="maya.html">
+            Maya
+        </a>
+
+        <a href="photoshop.html">
+            Photoshop
+        </a>
+
+        <a href="python.html">
+            Python
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <!-- =========================================================
+         MAIN CONTENT
+         ========================================================= -->
+
+    <main>
+
+
+        <!-- =====================================================
+             ABOUT ME
+             ===================================================== -->
+
+        <section class="about-section">
+
+            <h2>
+                About Me
             </h2>
 
-        </div>
+            <p>
+                I am a senior technical artist with deep experience
+                building and modernizing real-time art, animation,
+                and FX pipelines for Unity-based games and land-based
+                slot content. I specialize in translating artistic
+                vision into performant, scalable systems by combining
+                shader development, tooling, and workflow design to
+                support both artists and engineers.
+            </p>
 
-        <!-- Navigation Section -->
-        <p style="text-align:center; position:relative; top:-5px;">
-            <a href="index.html" style="color:cyan;">Home</a> <strong>|</strong>
-            <span style="color:white;">About</span> <strong>|</strong>
-            <a href="unity.html" style="color:cyan;">Unity</a> <strong>|</strong>
-            <a href="unreal.html" style="color:cyan;">Unreal</a> <strong>|</strong>
-            <a href="cocos.html" style="color:cyan;">Cocos Creator</a> <strong>|</strong>
-            <a href="maya.html" style="color:cyan;">Maya</a> <strong>|</strong>
-            <a href="python.html" style="color:cyan;">Photoshop</a> <strong>|</strong>
-            <a href="python.html" style="color:cyan;">Python</a> <strong>|</strong>
-            <a href="contact.html" style="color:cyan;">Contact</a>
-        </p>
+            <p>
+                My experience includes real-time animation and FX
+                systems, custom HLSL shader development
+                (sprite animation, flipbooks, recoloring, glow effects,
+                UV scrolling), and reusable component-driven workflows
+                that reduce reliance on baked animation and
+                image-sequence pipelines.
+            </p>
 
-        <!-- About Me Section -->
-        <h3 style="position:relative; top: 0px; left: 15px;">About Me</h3>
-        
-        <p style="position:relative; top: 0px; left: 15px;">
-            I am a senior technical artist with deep experience building and modernizing real-time art, animation, and FX pipelines for Unity-based games and land-based slot content. I specialize in translating artistic vision into performant, scalable systems by combining shader development, tooling, and workflow design to support both artists and engineers.
-        </p>
-        
-        <p style="position:relative; top: 0px; left: 15px;">
-            My experience includes real-time animation and FX systems, custom HLSL shader development (sprite animation, flipbooks, recoloring, glow effects, UV scrolling), and reusable component-driven workflows that reduce reliance on baked animation and image-sequence pipelines. I regularly build artist-facing tools to accelerate production, including Bezier path animation utilities, asset validation and cleanup tools, and standardized texture import and preset systems.
-        </p>
+            <p>
+                I regularly build artist-facing tools to accelerate
+                production, including Bezier path animation utilities,
+                asset validation and cleanup tools, and standardized
+                texture import and preset systems.
+            </p>
 
-         <p style="position:relative; top: 0px; left: 15px;">
-            I have extensive hands-on experience with Unity, shader and particle systems, UI workflows, high-resolution asset integration, and performance-conscious content pipelines for both mobile and high-end cabinet hardware. I collaborate closely with engineers and artists to identify bottlenecks, speed up iteration, and deliver maintainable solutions backed by clear technical documentation and best practices.
-        </p>
+            <p>
+                I have extensive hands-on experience with Unity,
+                shader and particle systems, UI workflows,
+                high-resolution asset integration, and
+                performance-conscious content pipelines for both
+                mobile and high-end cabinet hardware.
+            </p>
 
-        <p style="position:relative; top: 0px; left: 15px;">
-            Throughout my career, I have contributed to and supported live products across various genres, including casual and casino games, at studios such as Ainsworth, PeopleFun, Self Aware Games, and Zynga. I have worked on titles such as Wordscapes, Big Fish Casino, Poker, Farmville, and Spore.
-        </p>
+            <p>
+                I collaborate closely with engineers and artists
+                to identify bottlenecks, speed up iteration,
+                and deliver maintainable solutions backed by
+                clear technical documentation and best practices.
+            </p>
 
-        <p style="position:relative; top: 0px; left: 15px;">
-            I bring a calm, systems-oriented approach to complex production environments and thrive in roles that value clarity, craftsmanship, and collaboration.
-        </p>
+            <p>
+                Throughout my career, I have contributed to and
+                supported live products across various genres,
+                including casual and casino games, at studios such
+                as Ainsworth, PeopleFun, Self Aware Games, and Zynga.
+                I have worked on titles such as Wordscapes,
+                Big Fish Casino, Poker, Farmville, and Spore.
+            </p>
 
-        <p style="position:relative; top: 0px; left: 15px;">Mahalo,
-            <br>Kellie Hucker</p>
+            <p>
+                I bring a calm, systems-oriented approach to complex
+                production environments and thrive in roles that value
+                clarity, craftsmanship, and collaboration.
+            </p>
 
-        <!-- Core Skills Section -->
-        <h3 style="position:relative; top: 10px; left: 15px;">My Core Skills</h3>
-        <ul style="position:relative; top: 0px; left: 15px;">
-            <li>Shader Development</li>
-            <li>Asset Components</li>
-            <li>Editor Tools</li>
-            <li>Content Optimization</li>
-            <li>Real-Time VFX and Animation</li>
-        </ul>
+            <p class="signature">
+                Mahalo,
+                <br>
+                Kellie Hucker
+            </p>
 
-        <!-- Add Work History -->
-        <h3 style="position:relative; top: 10px; left: 15px;">My Work History</h3>
-        <ul style="position:relative; top: 0px; left: 15px;">
-            <li>Ainsworth Slots</li>
-            <li>PeopleFun</li>
-            <li>Self Aware Game (Big Fish/Product Madness)</li>
-            <li>Zynga</li>
-        </ul>
-
-        <ul>
-            
-            <li><a href = "mailto:khucker3d@gmail.com" style="color:cyan;">Download My Resume</a></li>
-        </ul>
+        </section>
 
 
-        <!-- Copyright Section -->
-        <p style="position:fixed; bottom:10px; left:50%; transform:translateX(-50%); margin:0;">
-            &copy; Kellie Hucker, 2026 <img src="images/logo_transparent_0.25x.png" alt="Kellie Hucker Logo" width="50" height="50" style="position:relative; top: 15px; left: -10px;">
-        </p>
-        
-    </body>
+        <!-- =====================================================
+             CORE SKILLS
+             ===================================================== -->
+
+        <section>
+
+            <h2 class="section-title">
+                My Core Skills
+            </h2>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    Shader Development
+                </div>
+
+                <div class="skill-card">
+                    Asset Components
+                </div>
+
+                <div class="skill-card">
+                    Editor Tools
+                </div>
+
+                <div class="skill-card">
+                    Content Optimization
+                </div>
+
+                <div class="skill-card">
+                    Real-Time VFX
+                    &amp;
+                    Animation
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             WORK HISTORY
+             ===================================================== -->
+
+        <section>
+
+            <h2 class="section-title">
+                My Work History
+            </h2>
+
+            <div class="work-grid">
+
+                <div class="work-card">
+                    <h3>
+                        Ainsworth
+                    </h3>
+
+                    <p>
+                        Land-based slot game development
+                        and technical-art production.
+                    </p>
+                </div>
+
+
+                <div class="work-card">
+                    <h3>
+                        PeopleFun
+                    </h3>
+
+                    <p>
+                        Mobile game development
+                        and production support.
+                    </p>
+                </div>
+
+
+                <div class="work-card">
+                    <h3>
+                        Self Aware Games
+                    </h3>
+
+                    <p>
+                        Big Fish / Product Madness
+                        game development and technical-art work.
+                    </p>
+                </div>
+
+
+                <div class="work-card">
+                    <h3>
+                        Zynga
+                    </h3>
+
+                    <p>
+                        Game development,
+                        production pipelines,
+                        and live-product support.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             RESUME
+             ===================================================== -->
+
+        <section class="resume-section">
+
+            <a
+                href="mailto:khucker3d@gmail.com?subject=Resume Request"
+                class="resume-button"
+            >
+                Request My Resume
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer>
+
+        &copy; Kellie Hucker,
+        Senior Technical Artist
+        &amp;
+        Game Development Leader, 2026
+
+        <img
+            src="images/logos/kh_logos/logo_transparent_0.25x.png"
+            alt="Kellie Hucker Logo"
+        >
+
+    </footer>
+
+
+</body>
+
 </html>
