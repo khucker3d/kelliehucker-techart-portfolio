@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Secrets / Environment Files
+.env
+.env.*
+!.env.example
+
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Editor / IDE Files
+.vscode/
+.idea/
+
+# Temporary / Backup Files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# Logs
+*.log

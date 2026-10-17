@@ -1,0 +1,126 @@
+/* =========================================================
+   CONTACT PAGE
+   ========================================================= */
+
+.contact-options {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.contact-card-box {
+    padding: 30px;
+    background-color: #0a0a0a;
+    border: 1px solid #164f4f;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.08);
+}
+
+.contact-card-box h2 {
+    margin-top: 0;
+    color: white;
+}
+
+.contact-card-box p {
+    color: #f0f0f0;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    color: white;
+    background-color: #111111;
+    border: 1px solid #444444;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: cyan;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.25);
+}
+
+.contact-form button {
+    margin-top: 18px;
+    padding: 14px 24px;
+    color: cyan;
+    background-color: #0a0a0a;
+    border: 1px solid cyan;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.contact-form button:hover {
+    color: black;
+    background-color: cyan;
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.35);
+}
+
+.contact-card {
+    display: block;
+    padding: 26px 30px;
+    background-color: #0a0a0a;
+    border: 1px solid #164f4f;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.linkedin-card {
+    margin-top: 35px;
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    border-color: cyan;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.35);
+    background-color: #0d1111;
+}
+
+.contact-card h3 {
+    margin-top: 0;
+    color: cyan;
+    font-size: 1.35rem;
+}
+
+.contact-card p {
+    margin-bottom: 0;
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .contact-card-box,
+    .contact-card {
+        padding: 22px;
+    }
+}
