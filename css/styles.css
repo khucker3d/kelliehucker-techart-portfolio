@@ -734,7 +734,11 @@ main {
 
 /* Adds space between shader title and description */
 .shader-section .project-detail-card h3 {
-    margin-bottom: 24px;
+    width: 100%;
+
+    margin: 0 0 20px;
+
+    text-align: center;
 }
 
 
@@ -752,14 +756,16 @@ main {
    ========================================================= */
 
 .shader-card-image {
-    width: 150px;
-    height: 150px;
+    width: 85%;
+    height: auto;
+
+    max-width: 250px;
 
     object-fit: contain;
 
     display: block;
 
-    margin: auto auto 10px;
+    margin: auto;
 }
 
 /* =========================================================
