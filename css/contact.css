@@ -10,20 +10,8 @@
 .contact-card-box {
     padding: 30px;
     background-color: #0a0a0a;
-    border: 1px solid #164f4f;
+    border: 1px solid var(--accent-blue-light);
     border-radius: 12px;
-    box-shadow: 0 0 12px rgba(0, 255, 255, 0.08);
-}
-
-.contact-card-box h2 {
-    margin-top: 0;
-    color: white;
-}
-
-.contact-card-box p {
-    color: #f0f0f0;
-    line-height: 1.6;
-    margin-bottom: 25px;
 }
 
 .contact-form {
@@ -34,6 +22,7 @@
 
 .contact-form label {
     margin-top: 10px;
+    color: var(--text);
     font-weight: bold;
 }
 
@@ -41,7 +30,7 @@
 .contact-form textarea {
     width: 100%;
     padding: 12px;
-    color: white;
+    color: var(--text);
     background-color: #111111;
     border: 1px solid #444444;
     border-radius: 6px;
@@ -52,75 +41,103 @@
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: cyan;
-    box-shadow: 0 0 8px rgba(0, 255, 255, 0.25);
+    border-color: var(--accent-blue-light);
+    box-shadow: 0 0 8px rgba(55, 161, 255, 0.25);
 }
 
 .contact-form button {
     margin-top: 18px;
     padding: 14px 24px;
-    color: cyan;
+    color: var(--text);
     background-color: #0a0a0a;
-    border: 1px solid cyan;
+    border: 1px solid var(--accent-blue-light);
     border-radius: 8px;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease,
-        box-shadow 0.2s ease,
-        transform 0.2s ease;
-}
 
-.contact-form button:hover {
-    color: black;
-    background-color: cyan;
-    transform: translateY(-2px);
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.35);
-}
-
-.contact-card {
-    display: block;
-    padding: 26px 30px;
-    background-color: #0a0a0a;
-    border: 1px solid #164f4f;
-    border-radius: 12px;
-    text-decoration: none;
-    color: white;
     transition:
         transform 0.2s ease,
+        color 0.2s ease,
+        background-color 0.2s ease,
         border-color 0.2s ease,
-        box-shadow 0.2s ease,
-        background-color 0.2s ease;
+        box-shadow 0.2s ease;
 }
 
+.contact-form button:hover,
+.contact-form button:focus-visible {
+    color: var(--text);
+    background-color: var(--surface-hover);
+    border-color: var(--accent-strong);
+
+    box-shadow:
+        0 0 4px var(--accent-strong),
+        0 0 12px var(--accent),
+        0 0 24px var(--accent-blue-glow),
+        0 0 38px var(--accent-violet-glow),
+        0 0 48px var(--accent-magenta-glow);
+
+    outline: none;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   LINKEDIN CARD
+   ========================================================= */
 .linkedin-card {
-    margin-top: 35px;
+    width: min(620px, 100%);
+    margin: 35px auto 0;
+    padding: 22px 30px 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #0a0a0a;
+    border: 1px solid var(--accent-blue-light);
+    border-radius: 12px;
+
+    text-align: center;
 }
 
-.contact-card:hover {
-    transform: translateY(-4px);
-    border-color: cyan;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.35);
-    background-color: #0d1111;
+/* LinkedIn image button */
+.linkedin-button {
+    display: inline-block;
+    margin: 0 auto;
+    line-height: 0;
+    text-decoration: none;
+
+    transition:
+        transform 0.12s ease,
+        filter 0.12s ease;
 }
 
-.contact-card h3 {
-    margin-top: 0;
-    color: cyan;
-    font-size: 1.35rem;
+/* Optimized LinkedIn hover glow */
+.linkedin-button:hover,
+.linkedin-button:focus-visible {
+    transform: scale(1.025);
+
+    filter:
+        drop-shadow(0 0 8px var(--accent-blue-glow))
+        drop-shadow(0 0 16px var(--accent-violet-glow));
+
+    outline: none;
 }
 
-.contact-card p {
-    margin-bottom: 0;
-    color: #f0f0f0;
-    line-height: 1.6;
+.linkedin-logo {
+    width: 260px;
+    height: auto;
+    display: block;
+    object-fit: contain;
 }
 
-@media (max-width: 600px) {
-    .contact-card-box,
-    .contact-card {
-        padding: 22px;
-    }
+.linkedin-hint {
+    margin: 6px 0 0;
+
+    color: var(--accent-blue-light);
+    font-size: 0.95rem;
+    font-style: italic;
+    text-align: center;
+
+    transform: none;
 }
